@@ -9,7 +9,7 @@ Don't use this for anything ~~serious~~. Don't even try. The way it is now, this
 ### Development
 Alright boys this is it. First, you're going to want to install [node.js](https://nodejs.org/en/). The project should technically work with [io.js](https://iojs.org/en/) as well, but I'd rather be safe than sorry. Then, to get started on this project all you have to do is clone/fork the github repo and run ```npm install``` in the root directory. Everything _should_ work after that. If you're missing a dependency after that (it will tell you that it can't find a module/package) just ```npm install [module/package]``` and tell me what it was and I'll add it to package.json (or you can even do it yourself since you have commit permissions). After you get everything setup, run ```node web.js``` to make sure everything is working. If there are any configuration problems, check out ```config.json```.
 
-## Developemnt Roadmap
+## Development Roadmap
 
 Alright so here's the plan:
   * Finish the frontend. That includes the logical side of it too. Make sure no one can messup a lobby by spamming it with requests. Thing's like that.
