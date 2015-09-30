@@ -1,0 +1,23 @@
+{
+  "name": "dota2-ihl",
+  "version": "0.0.1",
+  "dependencies": {
+    "dota2" : "node-dota2/tree/1.0.0-dev"
+  },
+  "readmeFilename": "README.md",
+  "description": "Create and customize your very own Dota 2 in-house league with ease. Features include automatic match creation, an easily configurable web based match creator and more,",
+  "main": "web.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pendo324/Dota2-Custom-IHL.git"
+  },
+  "keywords": [
+    "steam",
+    "valve",
+    "dota",
+    "IHL"
+  ],
+  "author": "pendo324",
+  "license": "MIT",
+  "private": true
+}
