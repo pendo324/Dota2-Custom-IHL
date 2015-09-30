@@ -1,0 +1,19 @@
+doctype
+html
+  head
+    title= 'IHL Blog'
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand(href='/') IHL Blog
+    .wrap
+      .container
+        .row
+          .span8
+            block content
+          .span4
+            .well.sidebar-nav
+              ul.nav.nav-list

@@ -1,0 +1,43 @@
+{
+  "botname": "Some Name12345",
+  "commandChar": ".",
+  "chatID": "103582791434793082",
+  "commands": {
+    "host": "canKick",
+    "join": "canKick",
+    "test": "canKick"
+  },
+  "commands_dota": {
+  	"start": "",
+  	"exit": ""
+  },
+  "region": 2,
+  "secret": "lulthisisasecretkeylmao",
+  "web": {
+    "apikey": "26AF57E923E0D8E5E63C006BA68D78FE",
+    "mongodb": "mongo://localhost/dota/",
+    "redisdb": "redis://127.0.0.1:6379/0",
+    "enabled": "true",
+    "baseurl": "http://topkek.us",
+    "port": 8080,
+    "league_name": "My First League",
+    "web_style": "default"
+  },
+  "steam": {
+    "account_name": "ihlbot2",
+    "password": "Iamanihlbot2",
+    "auth_code": ""
+  },
+  "dota_bots": {
+    "0": {
+      "account_name": "ihlbot3",
+      "password": "Iamanihlbot2",
+      "auth_code": ""
+    },
+    "1": {
+      "account_name": "ihlbot4",
+      "password": "Iamanihlbot2",
+      "auth_code": ""
+    }
+  }
+}

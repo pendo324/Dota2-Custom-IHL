@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+    #messages {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: auto;
+    }
+    
+    #users {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        height: 150px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: auto;
+    }
+    
+    #messages li {}
+    
+    #users li {}
+    
+    .messageHistory {
+        color: #806126;
+        font-weight: bold;
+    }
+    /*#messages li:nth-child(odd) {
+        background: #eee;
+    }
+    
+    #users li:nth-child(odd) {
+        background: #eee;
+    }
+    /*#messages::-webkit-scrollbar {
+        display: none;
+    }
+
+    #users::-webkit-scrollbar {
+        display: none;
+    }*/
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#disNavbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Topkek</a>
+        </div>
+        <div class="collapse navbar-collapse" id="disNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Leaderboards</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+            <!--<a class="navbar-brand" href="#">IHL</a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/leaderboards">Leaderboards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blogs">Blog</a>
+                </li>
+            </ul>-->
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 70px">
+            <div class="col-md-10">
+                <ul id="messages" class="list-group"></ul>
+                <form action="" style="padding-top: 10px">
+                    <div class="input-group">
+                        <input type="text" id="m" autocomplete="off" class="form-control" placeholder="">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Chat</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-1" style="margin-left:-17px">
+                <ul id="users" class="list-group"></ul>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target=".bd-example-modal-lg">Create Lobby</button>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-md-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-block" style="margin-bottom:50px">
+                                    <h4 class="card-title">Open Games</h4>
+                                    <ul id="games" class="list-group">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="currentLobby" class="card invisible">
+                    <div class="card-block" style="margin-bottom:50px">
+                        <h4 class="card-title">Current Lobby</h4>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p>Radiant</p>
+                                    <ul id="radiantList" class="list-group">
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <p>Dire</p>
+                                    <ul id="direList" class="list-group">
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 col-md-offset-1">
+                                    <p>Players</p>
+                                    <ul id="playersList" class="list-group">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="btn btn-primary" onclick="startGame();">Start Game</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gameModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Game Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputGameName" class="col-sm-2 form-control-label">Name</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputGameName" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 form-control-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">Game Mode</label>
+                                <div class="col-sm-10">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="gameModePicker" id="allPick" value="allPick" checked> All Pick
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="gameModePicker" id="captainsMode" value="captainsMode"> Captain's Mode
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">Region</label>
+                                <div class="col-sm-10">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="regionPicker" id="USEast" value="USEast" checked> USEast
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="regionPicker" id="USWest" value="USWest"> USWest
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2">Ranked?</label>
+                                <div class="col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="ranked" type="checkbox"> Ranked
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="addGame(); " data-dismiss="modal">Create Lobby</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>
