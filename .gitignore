@@ -31,3 +31,4 @@ _posts
 
 # ignore local node exe's
 node.exe
+npm.cmd
