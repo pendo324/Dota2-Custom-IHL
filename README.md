@@ -12,10 +12,10 @@ Alright boys this is it. To get started on the project all you have to do is clo
 ## Developemnt Roadmap
 
 Alright so here's the plan:
---* Finish the frontend. That includes the logical side of it too. Make sure no one can messup a lobby by spamming it with requests. Thing's like that.
---* Make sure the scheduler behaves as intended. Basically make sure that multiple bots can run at the same time without a hitch and make sure that when they are done, they return to the pool of useable bots and are acutally used again.
---* Create/utilize a match parser. We don't actually have to create one if we use Clarity (which is written in Java I believe). The YASP guys told me that a Javascript based match parser isn't even worth it, which is why they don't even use one. I'd be interested to see performance comparissons though. Honestly, what parser to use is *very* low on the priority list. We just need *a* parser, doesn't matter which to the users.
----- For a recap: 
-------* Clarity
-------* Our own match parser in Javascript
-------* Our own match parser written in some other language
+  * Finish the frontend. That includes the logical side of it too. Make sure no one can messup a lobby by spamming it with requests. Thing's like that.
+  * Make sure the scheduler behaves as intended. Basically make sure that multiple bots can run at the same time without a hitch and make sure that when they are done, they return to the pool of useable bots and are acutally used again.
+  * Create/utilize a match parser. We don't actually have to create one if we use Clarity (which is written in Java I believe). The YASP guys told me that a Javascript based match parser isn't even worth it, which is why they don't even use one. I'd be interested to see performance comparissons though. Honestly, what parser to use is *very* low on the priority list. We just need *a* parser, doesn't matter which to the users.
+     For a recap: 
+      * Clarity
+      * Our own match parser in Javascript
+      * Our own match parser written in some other language
