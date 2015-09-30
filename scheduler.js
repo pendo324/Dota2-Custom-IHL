@@ -15,9 +15,8 @@ var steam = require("steam"),
     dota_bots = config.dota_bots,
     chatID = config.chatID,
     region = config.region,
-    randomstring = require("randomstring"),
-    bignum = require("bignum");
-
+    randomstring = require("randomstring");
+    
 var isReady = true; // just in case you want to check if steam is ready for some reason
 var introMsg = false;
 var lobbies = []; // manage all lobbies from the steam group, remove lobbies when the game is sent back as started

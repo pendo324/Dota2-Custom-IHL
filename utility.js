@@ -1,17 +1,17 @@
-var bignum = require("bignum");
+var bignumber = require("bignumber");
 
-// takes a decomposed 64-bit integer and returns it in a bignum object
+// takes a decomposed 64-bit integer and returns it in a bignumber object
 var bigInt = function bigInt(high, low) {
-    var h = bignum(new Uint32Array([high])[0]);
-    var l = bignum(new Uint32Array([low])[0]);
-    return bignum(h.shiftLeft(32).or(l));
+    var h = bignumber(new Uint32Array([high])[0]);
+    var l = bignumber(new Uint32Array([low])[0]);
+    return bignumber(h.shift(-32).or(l));
 };
 
 //takes a steamId3 and makes the equivalent steamId64. Dota deals with steamId3 for some reason
 var steam3To64 = function steam3To64(id) {
     var p = id % 2;
-    var b_id = bignum(id);
-    return bignum("76561197960265728").add(b_id).add(p).toString(); // yes, its a magic number
+    var b_id = bignumber(id);
+    return bignumber("76561197960265728").plus(b_id).plus(p).toString(); // yes, its a magic number
 };
 
 /*
@@ -21,7 +21,7 @@ var steam3To64 = function steam3To64(id) {
  */
 
 function convert64to32(id) {
-    return new bignum(id).sub('76561197960265728');
+    return new bignumber(id).minus('76561197960265728');
 }
 
 /*
@@ -30,7 +30,7 @@ function convert64to32(id) {
  * Returns a BigNumber
  */
 function convert32to64(id) {
-    return new bignum('76561197960265728').add(id);
+    return new bignumber('76561197960265728').plus(id);
 }
 
 module.exports = {

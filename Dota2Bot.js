@@ -8,9 +8,8 @@ var steam = require("steam"),
     dota2 = require("dota2"),
     Dota2 = new dota2.Dota2Client(steamClient, true),
     randomstring = require("randomstring"),
-    utility = require("./utility.js"),
-    bignum = require("bignum");
-
+    utility = require("./utility.js");
+    
 var dotaReady = false;
 var steamReady = false;
 
