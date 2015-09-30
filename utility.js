@@ -1,4 +1,4 @@
-var bignumber = require("bignumber");
+var bignumber = require("bignumber.js");
 
 // takes a decomposed 64-bit integer and returns it in a bignumber object
 var bigInt = function bigInt(high, low) {
