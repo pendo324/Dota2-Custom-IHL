@@ -2,7 +2,7 @@
   "name": "dota2-ihl",
   "version": "0.0.1",
   "dependencies": {
-    "dota2" : "node-dota2/tree/1.0.0-dev",
+    "dota2" : "git://github.com/RJacksonm1/node-dota2.git#1.0.0-dev",
     "passport": "*",
     "passport-steam": ">=0.1.6",
     "express":">=4.0.0"
