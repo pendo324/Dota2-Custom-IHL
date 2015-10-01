@@ -32,3 +32,6 @@ _posts
 # ignore local node exe's
 node.exe
 npm.cmd
+
+# ignore config (for easier testing purposes)
+config.json
