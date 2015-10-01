@@ -10,7 +10,7 @@ app.route("/return").get(passport.authenticate("steam", {
     failureRedirect: "/"
 }), function(req, res) {
 	console.log(req.session);
-    res.redirect("/");
+    res.redirect("/chat");
 });
 
 app.route("/logout").get(function(req, res) {
