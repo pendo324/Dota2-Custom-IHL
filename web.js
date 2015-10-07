@@ -60,7 +60,7 @@ app.use("/", require("./routes/auth.js"));
 app.use("/", require("./routes/chat.js"));
 
 // Home page
-app.use("/", require("./routes/chat.js"));
+app.use("/", require("./routes/home.js"));
 
 // init Poet
 var Poet = require("poet");
