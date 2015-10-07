@@ -35,3 +35,6 @@ npm.cmd
 
 # ignore config (for easier testing purposes)
 config.json
+
+# ignore the .env file (for use with dotenv)
+*.env
