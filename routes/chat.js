@@ -1,10 +1,8 @@
-var express = require("express");
-//var app = require("../web.js");
-var app = express.Router();
-var path = require("path");
-var moment = require("moment");
-
-var passport = require("../passport.js");
+var express = require("express"),
+    app = express.Router(),
+    path = require("path"),
+    moment = require("moment"),
+    passport = require("../passport.js");
 
 app.route("/chat").get(function(req, res) {
     try {
