@@ -14,7 +14,7 @@
   "region": 2,
   "secret": "lulthisisasecretkeylmao",
   "web": {
-    "apikey": "26AF57E923E0D8E5E63C006BA68D78FE",
+    "apikey": "insert a Steam API key here...",
     "mongodb": "mongo://localhost/dota/",
     "redisdb": "redis://127.0.0.1:6379/0",
     "enabled": "true",
