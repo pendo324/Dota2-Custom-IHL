@@ -38,3 +38,6 @@ config.json
 
 # ignore the .env file (for use with dotenv)
 *.env
+
+# ignore the .vscode folder (sometimes use vscode to edit)
+.vscode
